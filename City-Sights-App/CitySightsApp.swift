@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct City_Sights_App: App {
+struct CitySightsApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchView()

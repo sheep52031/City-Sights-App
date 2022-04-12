@@ -9,7 +9,7 @@ import Foundation
 
 struct Constants {
     
-    static var apiKey = "Use Your Yelp API Key"
+    static var apiKey = "ppQ9ikMn6P2iADS8GJ3tjWv0wVrb6Wt-Z16jO5Cg6EPIaqc5NcXa5OTvG_I49bA8pUdMpULqv_bFRaNIBfFr_tYEAtD2hyUt2dPtBPschTIjGFmwcTIiNOqkBt5PYnYx"
     static var apiUrl = "https://api.yelp.com/v3/businesses/search"
     static var restaurantsKey = "restaurants"
     static var sightsKey = "arts"
