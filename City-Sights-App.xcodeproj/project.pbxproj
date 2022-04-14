@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B27B3F262805CEA900F4105E /* BusinessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B3F252805CEA900F4105E /* BusinessRow.swift */; };
 		B2A473FE28054DF100D54B9C /* CitySightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A473FD28054DF100D54B9C /* CitySightsApp.swift */; };
 		B2A4740028054DF100D54B9C /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A473FF28054DF100D54B9C /* LaunchView.swift */; };
 		B2A4740228054DF200D54B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A4740128054DF200D54B9C /* Assets.xcassets */; };
@@ -19,9 +20,11 @@
 		B2A47423280567B700D54B9C /* BusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A47422280567B700D54B9C /* BusinessList.swift */; };
 		B2A4742528056F5C00D54B9C /* BusinessSectionHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4742428056F5C00D54B9C /* BusinessSectionHeaders.swift */; };
 		B2A4742728057CF500D54B9C /* BusinessSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A4742628057CF500D54B9C /* BusinessSection.swift */; };
+		B2F6DCFE2807B30200D671EF /* BusinessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6DCFD2807B30200D671EF /* BusinessDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B27B3F252805CEA900F4105E /* BusinessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRow.swift; sourceTree = "<group>"; };
 		B2A473FA28054DF100D54B9C /* City-Sights-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City-Sights-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A473FD28054DF100D54B9C /* CitySightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySightsApp.swift; sourceTree = "<group>"; };
 		B2A473FF28054DF100D54B9C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		B2A47422280567B700D54B9C /* BusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessList.swift; sourceTree = "<group>"; };
 		B2A4742428056F5C00D54B9C /* BusinessSectionHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeaders.swift; sourceTree = "<group>"; };
 		B2A4742628057CF500D54B9C /* BusinessSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSection.swift; sourceTree = "<group>"; };
+		B2F6DCFD2807B30200D671EF /* BusinessDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +155,18 @@
 				B2A47422280567B700D54B9C /* BusinessList.swift */,
 				B2A4742428056F5C00D54B9C /* BusinessSectionHeaders.swift */,
 				B2A4742628057CF500D54B9C /* BusinessSection.swift */,
+				B27B3F252805CEA900F4105E /* BusinessRow.swift */,
+				B2F6DCFC2807B2E700D671EF /* Detail */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		B2F6DCFC2807B2E700D671EF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B2F6DCFD2807B30200D671EF /* BusinessDetail.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,10 +240,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A4742528056F5C00D54B9C /* BusinessSectionHeaders.swift in Sources */,
+				B27B3F262805CEA900F4105E /* BusinessRow.swift in Sources */,
 				B2A4740028054DF100D54B9C /* LaunchView.swift in Sources */,
 				B2A4742028055EB800D54B9C /* HomeView.swift in Sources */,
 				B2A474162805541D00D54B9C /* Business.swift in Sources */,
 				B2A473FE28054DF100D54B9C /* CitySightsApp.swift in Sources */,
+				B2F6DCFE2807B30200D671EF /* BusinessDetail.swift in Sources */,
 				B2A474182805544600D54B9C /* BusinessSearch.swift in Sources */,
 				B2A47423280567B700D54B9C /* BusinessList.swift in Sources */,
 				B2A4742728057CF500D54B9C /* BusinessSection.swift in Sources */,

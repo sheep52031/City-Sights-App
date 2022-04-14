@@ -19,9 +19,13 @@ struct BusinessSection: View {
             
             ForEach(businesses){ business in
                 
-                Text(business.name ?? "")
+                NavigationLink(destination: BusinessDetail(business: business)) {
+                    BusinessRow(business:business)
+                }
+
                 
-                Divider()
+                
+                
             }
     }
         
