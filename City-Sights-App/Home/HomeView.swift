@@ -29,7 +29,9 @@ struct HomeView: View {
                             Image(systemName: "location")
                             Text("TaiWan")
                             Spacer()
-                            Text("Switch to map view")
+                            Button("switch to map view") {
+                                isMapShowing = true
+                            }
                         }
                         Divider()
                         
@@ -42,7 +44,10 @@ struct HomeView: View {
                 
                 else{
                     //Show map mode
-                     
+                    BusinessMap()
+                        .ignoresSafeArea()
+                    
+                    
                 }
             }
             
