@@ -147,6 +147,7 @@
 			children = (
 				B2A4741F28055EB800D54B9C /* HomeView.swift */,
 				B2F6DD0128081F4E00D671EF /* Map */,
+				B2F6DCFC2807B2E700D671EF /* Detail */,
 				B2A474212805676A00D54B9C /* List */,
 			);
 			path = Home;
@@ -159,7 +160,6 @@
 				B2A4742428056F5C00D54B9C /* BusinessSectionHeaders.swift */,
 				B2A4742628057CF500D54B9C /* BusinessSection.swift */,
 				B27B3F252805CEA900F4105E /* BusinessRow.swift */,
-				B2F6DCFC2807B2E700D671EF /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";

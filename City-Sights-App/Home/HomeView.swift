@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @EnvironmentObject var model:ContentModel
     @State var isMapShowing = false
+    @State var selectedBusiness : Business?
     
     
     var body: some View {
@@ -44,15 +45,17 @@ struct HomeView: View {
                 
                 else{
                     //Show map mode
-                    BusinessMap()
+                    BusinessMap(selectedBusiness: $selectedBusiness)
                         .ignoresSafeArea()
+                        .sheet(item: $selectedBusiness) { business in
+                            // Create a business detail view instants
+                            // Pass in the selected business
+                            BusinessDetail(business:business)
+                        }
                     
                     
                 }
             }
-            
-            
-            
             
             
         }
@@ -61,13 +64,9 @@ struct HomeView: View {
             ProgressView()
             
         }
-        
-    
-
-
-
 
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
