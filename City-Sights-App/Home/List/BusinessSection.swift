@@ -21,11 +21,7 @@ struct BusinessSection: View {
                 
                 NavigationLink(destination: BusinessDetail(business: business)) {
                     BusinessRow(business:business)
-                }
-
-                
-                
-                
+                }             
             }
     }
         

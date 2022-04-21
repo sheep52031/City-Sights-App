@@ -38,17 +38,12 @@ struct BusinessRow: View {
                 
                     Image("regular_\(business.rating ?? 0)")
                     Text("\(business.reviewCount ?? 0)Reviews").font(.caption)
-                    
-                    
-                    
+ 
                 }
             }
-            Divider()  
+            DashedDivider()
+                .padding(.vertical)
         }
-
-
-
-
     }
 }
 

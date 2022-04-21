@@ -10,6 +10,7 @@ import SwiftUI
 struct BusinessDetail: View {
     
     var business: Business
+    @State private var showDirections = false
     
     var body: some View {
         
@@ -40,68 +41,60 @@ struct BusinessDetail: View {
         
             Group {
             
-            //Business Name
-            Text(business.name!)
-                .font(.largeTitle)
-                .padding()
-            
-            //Address
-            if business.location?.displayAddress != nil{
-                
-                ForEach(business.location!.displayAddress!, id: \.self) {
-                    displayLine in
-                    Text(displayLine).padding(.horizontal)
+                HStack{
+                    BusinessTitle(business: business)
+                        .padding()
+                    Spacer()
+                    YelpAttribution(link: business.url!)  
                 }
-            }
-            
-            //Rating
-                Image("regular_\(business.rating ?? 0)").padding()
-            
-            Divider()
-            
-            //Phone
-            HStack{
+                DashedDivider()
+                    .padding(.horizontal)
                 
-                Text("Phone").bold()
-                Text(business.displayPhone ?? "")
-                Spacer()
-                Link("Call",destination: URL(string:"tel:\(business.phone ?? "")")!)
-            }
-            .padding()
-            
-            Divider()
-            
-            //Reviews
-            HStack{
+                
+                //Phone
+                HStack{
                     
-                Text("Reviews").bold()
-                Text(String(business.reviewCount ?? 0))
-                Spacer()
-                Link("Read",destination: URL(string:"\(business.url ?? "")")!)
-            }
-            .padding()
+                    Text("Phone").bold()
+                    Text(business.displayPhone ?? "")
+                    Spacer()
+                    Link("Call",destination: URL(string:"tel:\(business.phone ?? "")")!)
+                }
+                .padding()
                 
-            Divider()
-            
-            //Website
-            HStack{
+                DashedDivider()
+                    .padding(.horizontal)
+                
+                //Reviews
+                HStack{
                         
-                Text("Website").bold()
-                Text(business.url ?? "").lineLimit(1)
-                Spacer()
-                Link("Visit",destination: URL(string:"\(business.url ?? "")")!)
-                }.padding()
-            
-            Divider()
-        }
-        
-         
+                    Text("Reviews").bold()
+                    Text(String(business.reviewCount ?? 0))
+                    Spacer()
+                    Link("Read",destination: URL(string:"\(business.url ?? "")")!)
+                }
+                .padding()
+                    
+                DashedDivider()
+                    .padding(.horizontal)
+                
+                //Website
+                HStack{
+                            
+                    Text("Website").bold()
+                    Text(business.url ?? "").lineLimit(1)
+                    Spacer()
+                    Link("Visit",destination: URL(string:"\(business.url ?? "")")!)
+                    }.padding()
+                
+                DashedDivider()
+                    .padding(.horizontal)
+            }
+
             //Get directions Button
             
             Button{
-                
-                //TODO: Show direction
-                
+                //Show direction
+                showDirections = true
             } label: {
                 
                 ZStack{
@@ -112,6 +105,9 @@ struct BusinessDetail: View {
                 }
             }
             .padding()
+            .sheet(isPresented: $showDirections) {
+                DirectionsView(business: business)
+            }
         }
     }
 }

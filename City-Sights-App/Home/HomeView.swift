@@ -28,7 +28,7 @@ struct HomeView: View {
                         
                         HStack{
                             Image(systemName: "location")
-                            Text("TaiWan")
+                            Text(model.placemark?.locality ?? "")
                             Spacer()
                             Button("switch to map view") {
                                 isMapShowing = true
@@ -36,37 +36,66 @@ struct HomeView: View {
                         }
                         Divider()
                         
-                        BusinessList()
+                        ZStack(alignment: .top){
+                            
+                            BusinessList()
+                            
+                            HStack{
+                                Spacer()
+                                YelpAttribution(link:"https://www.yelp.com/")
+                            }
+                            .padding(.trailing,-2)
+                        }
+                        
                        
                     }.padding([.horizontal,.top])
                      .navigationBarHidden(true)
                 }
                 
-                
                 else{
-                    //Show map mode
-                    BusinessMap(selectedBusiness: $selectedBusiness)
-                        .ignoresSafeArea()
-                        .sheet(item: $selectedBusiness) { business in
-                            // Create a business detail view instants
-                            // Pass in the selected business
-                            BusinessDetail(business:business)
-                        }
                     
-                    
-                }
-            }
-            
-            
+                    ZStack(alignment:.top){
+                            
+                            //Show map mode
+                            BusinessMap(selectedBusiness: $selectedBusiness)
+                                .ignoresSafeArea()
+                                .sheet(item: $selectedBusiness) { business in
+                                    // Create a business detail view instants
+                                    // Pass in the selected business
+                                    BusinessDetail(business:business)
+                            }
+                            
+                                    // Rectangle overlay
+                                    ZStack{
+                                    
+                                    Rectangle()
+                                            .foregroundColor(.white)
+                                            .cornerRadius(5)
+                                            .frame(height: 48)
+                                        
+                                        
+                                        HStack{
+                                            Image(systemName: "location")
+                                            Text(model.placemark?.locality ?? "")
+                                            Spacer()
+                                            Button("switch to list view") {
+                                                isMapShowing = false
+                                            }
+                                        }
+                                        .padding()
+                                    }
+                                    .padding()
+                            }
+                    .navigationBarHidden(true)
+                    }
+                
+            }      
         }
         else{
             //Still waiting for data so show spinner
             ProgressView()
-            
         }
-
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {

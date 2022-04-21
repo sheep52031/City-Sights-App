@@ -55,6 +55,7 @@ struct BusinessMap:UIViewRepresentable{
         
         //Add the ones based on the business
         uiView.showAnnotations(self.locations, animated: true)
+         
     }
     
     static func dismantleUIView(_ uiView: MKMapView, coordinator: ()) {
